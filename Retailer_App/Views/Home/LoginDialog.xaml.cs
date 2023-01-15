@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Retailer_App.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,13 +19,17 @@ namespace Retailer_App.Views.Home
     {
         public LoginDialog()
         {
+            vm = new UserViewModel();
             InitializeComponent();
+            vm.OnCallBack += Close;
+            DataContext = vm;
         }
 
-        private void Login_Click(object sender, RoutedEventArgs e)
+        private readonly UserViewModel vm;
+
+        private void TxtPass_PasswordChanged(object sender, RoutedEventArgs e)
         {
-            App.Dashboard = new Dashboard();
-            App.Dashboard.Show();
+            vm.Model.Keypass = TxtPass.Password;
         }
 
         private void Close_Click(object sender, RoutedEventArgs e)
