@@ -18,25 +18,26 @@
             <RowDefinition Height="31*"/>
         </Grid.RowDefinitions>
         <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="146" Grid.Column="1" Margin="22.6,0,0,0" Grid.Row="1" Height="37"/>
-        <DataGrid x:Name="TblData"  Grid.Column="0" Grid.Row="1" Margin="9,9,9,9" HeadersVisibility="Column" EnableRowVirtualization="False"
-                  CanUserAddRows="False" CanUserDeleteRows="False" AutoGenerateColumns="False" AlternatingRowBackground="LightGray" SelectedCellsChanged="TblData_SelectedCellsChanged" 
-                  >
+        <DataGrid x:Name="TblData" Grid.Row="1" Margin="9,9,9,9"
+                  HeadersVisibility="Column" EnableRowVirtualization="False"
+                  CanUserAddRows="False" CanUserDeleteRows="False" AutoGenerateColumns="False"
+                  AlternatingRowBackground="LightGray" SelectedCellsChanged="TblData_SelectedCellsChanged" 
+                  ItemsSource="{Binding Collection}" SelectedItem="{Binding Model}">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="CODE" Width="auto"/>
-                <DataGridTextColumn Header="NAME" Width="*"/>
-                <DataGridTextColumn Header="USER" Width="*"/>
-                <DataGridTextColumn Header="PASSWORD" Visibility="Hidden"/>
-                <DataGridTextColumn Header="STATUS" Width="auto"/>
+                <DataGridTextColumn Header="CODE" Binding="{Binding Uid}" Width="auto"/>
+                <DataGridTextColumn Header="NAME" Binding="{Binding Name}" Width="*"/>
+                <DataGridTextColumn Header="USER" Binding="{Binding UserName}" Width="*"/>
+                <DataGridTextColumn Header="PASSWORD" Binding="{Binding Keypass}" Visibility="Hidden"/>
+                <DataGridTextColumn Header="STATUS" Binding="{Binding Status}" Width="auto"/>
             </DataGrid.Columns>
-
         </DataGrid>
-        <TextBox x:Name="TxtName" Height="23" Margin="146,12.6,9.4,0" Grid.Row="2" TextWrapping="Wrap"  VerticalAlignment="Top"/>
-        <TextBox x:Name="TxtUid" Height="23" Margin="146,61.6,167.4,0" Grid.Row="2" TextWrapping="Wrap"  VerticalAlignment="Top" RenderTransformOrigin="0.384,0.209"/>
-        <TextBox x:Name="TxtUser" Height="23" Margin="486,61.6,0,0" Grid.Row="2" TextWrapping="Wrap"  VerticalAlignment="Top" Width="66"/>
-        <TextBox x:Name="TxtPassword" Height="23" Margin="136,104.6,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="416"/>
-        <CheckBox x:Name="ChkStatus" Margin="146,11,62.4,0" Grid.Row="3" VerticalAlignment="Top"/>
+        <TextBox x:Name="TxtName" Text="{Binding Model.Name, Mode=TwoWay}" Height="23" Margin="146,12.6,9.4,0" Grid.Row="2" TextWrapping="Wrap"  VerticalAlignment="Top"/>
+        <TextBox x:Name="TxtUid" Text="{Binding Model.Uid, Mode=TwoWay}" Height="23" Margin="146,61.6,167.4,0" Grid.Row="2" TextWrapping="Wrap"  VerticalAlignment="Top" RenderTransformOrigin="0.384,0.209"/>
+        <TextBox x:Name="TxtUser" Text="{Binding Model.UserName, Mode=TwoWay}" Height="23" Margin="486,61.6,0,0" Grid.Row="2" TextWrapping="Wrap"  VerticalAlignment="Top" Width="66"/>
+        <TextBox x:Name="TxtPassword" Text="{Binding Model.Keypass, Mode=TwoWay}" Height="23" Margin="136,104.6,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="416"/>
+        <CheckBox x:Name="ChkStatus" IsChecked="{Binding IsChecked, Mode=TwoWay}" Margin="146,11,62.4,0" Grid.Row="3" VerticalAlignment="Top"/>
 
-        <Button x:Name="BtnInsert" Content="INSERT" HorizontalAlignment="Left" VerticalAlignment="Top" Width="146" Grid.Column="1" Margin="22.6,0,0,0" Grid.Row="1" Height="37"/>
+        <Button x:Name="BtnInsert" Content="INSERT" Command="{Binding InsertCommand}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="146" Grid.Column="1" Margin="22.6,0,0,0" Grid.Row="1" Height="37"/>
         <Button x:Name="BtnDelete" Content="DELETE" HorizontalAlignment="Left" VerticalAlignment="Top" Width="146" Grid.Column="1" Margin="22.6,48,0,0" Grid.Row="1" Height="37"/>
         <Button x:Name="BtnUpdate" Content="UPDATE" HorizontalAlignment="Left" VerticalAlignment="Top" Width="146" Grid.Column="1" Margin="22.6,97,0,0" Grid.Row="1" Height="37"/>
 

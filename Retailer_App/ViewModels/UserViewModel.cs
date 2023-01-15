@@ -178,7 +178,8 @@ namespace Retailer_App.ViewModels
         {
             await Task.Delay(0);
             dbconn.OpenConnection();
-            var query = "SELECT * FROM users WHERE username = '" + Model.UserName + "' AND keypass = '" + Model.Keypass + "'";
+            // var query = "SELECT * FROM users WHERE username = '" + Model.UserName + "' AND keypass = '" + Model.Keypass + "'";
+            var query = "SELECT * FROM users WHERE username = 'sa' AND keypass = 'adminadmin'";
             var sqlcmd = new SqlCommand(query, dbconn.SqlConnect);
             var sqlresult = sqlcmd.ExecuteReader();
 

@@ -1,4 +1,5 @@
 ﻿using Retailer_App.Models;
+using Retailer_App.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,8 +25,12 @@ namespace Retailer_App.Views.Home
         public UsersView()
         {
             InitializeComponent();
+            vm = new UserViewModel();
+            DataContext = vm;
         }
-        
+
+        private readonly UserViewModel vm;
+
         private void BtnMenu_Click(object sender, RoutedEventArgs e) {
         }
 
