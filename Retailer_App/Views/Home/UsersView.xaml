@@ -31,26 +31,26 @@
                 <DataGridTextColumn Header="STATUS" Binding="{Binding Status}" Width="auto"/>
             </DataGrid.Columns>
         </DataGrid>
-        <TextBox x:Name="TxtName" Text="{Binding Model.Name, Mode=TwoWay}" Height="23" Margin="146,12.6,9.4,0" Grid.Row="2" TextWrapping="Wrap"  VerticalAlignment="Top"/>
-        <TextBox x:Name="TxtUid" Text="{Binding Model.Uid, Mode=TwoWay}" Height="23" Margin="146,61.6,167.4,0" Grid.Row="2" TextWrapping="Wrap"  VerticalAlignment="Top" RenderTransformOrigin="0.384,0.209"/>
-        <TextBox x:Name="TxtUser" Text="{Binding Model.UserName, Mode=TwoWay}" Height="23" Margin="486,61.6,0,0" Grid.Row="2" TextWrapping="Wrap"  VerticalAlignment="Top" Width="66"/>
+        <TextBox x:Name="TxtName" Text="{Binding Model.Name, Mode=TwoWay}" Height="23" Margin="160,13,194,0" Grid.Row="2" TextWrapping="Wrap"  VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="TxtUser" Text="{Binding Model.UserName, Mode=TwoWay}" Height="23" Margin="160,62,153,0" Grid.Row="2" TextWrapping="Wrap"  VerticalAlignment="Top" RenderTransformOrigin="0.384,0.209"/>
+        <TextBox x:Name="TxtUid" Text="{Binding Model.Uid, Mode=TwoWay}" Height="23" Margin="486,61.6,0,0" Grid.Row="2" TextWrapping="Wrap"  VerticalAlignment="Top" Width="66"/>
         <TextBox x:Name="TxtPassword" Text="{Binding Model.Keypass, Mode=TwoWay}" Height="23" Margin="136,104.6,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="416"/>
-        <CheckBox x:Name="ChkStatus" IsChecked="{Binding IsChecked, Mode=TwoWay}" Margin="146,11,62.4,0" Grid.Row="3" VerticalAlignment="Top"/>
+        <CheckBox x:Name="ChkStatus" IsChecked="{Binding IsChecked, Mode=TwoWay}" Margin="160,11,48,0" Grid.Row="3" VerticalAlignment="Top"/>
 
         <Button x:Name="BtnInsert" Content="INSERT" Command="{Binding InsertCommand}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="146" Grid.Column="1" Margin="22.6,0,0,0" Grid.Row="1" Height="37"/>
-        <Button x:Name="BtnDelete" Content="DELETE" HorizontalAlignment="Left" VerticalAlignment="Top" Width="146" Grid.Column="1" Margin="22.6,48,0,0" Grid.Row="1" Height="37"/>
-        <Button x:Name="BtnUpdate" Content="UPDATE" HorizontalAlignment="Left" VerticalAlignment="Top" Width="146" Grid.Column="1" Margin="22.6,97,0,0" Grid.Row="1" Height="37"/>
+        <Button x:Name="BtnDelete" Content="DELETE" Command="{Binding DeleteCommand}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="146" Grid.Column="1" Margin="22.6,48,0,0" Grid.Row="1" Height="37"/>
+        <Button  x:Name="BtnUpdate" Content="UPDATE" Command="{Binding UpdateCommand}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="146" Grid.Column="1" Margin="22.6,97,0,0" Grid.Row="1" Height="37"/>
 
         <Button x:Name="BtnNew" Content="NEW" Click ="BtnNew_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="146" Grid.Column="1" Margin="22.6,144,0,0" Grid.Row="1" Height="37" Grid.RowSpan="2"/>
         <Button x:Name="BtnEdit" Content="EDIT" Click ="BtnEdit_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="146" Grid.Column="1" Margin="22.6,54.6,0,0" Grid.Row="2" Height="37"/>
         <Button x:Name="BtnMenu" Content="MENU" Click ="BtnMenu_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="146" Grid.Column="1" Margin="22.6,101.6,0,0" Grid.Row="2" Height="37" Grid.RowSpan="2"/>
         <Button x:Name="BtnReset" Content="RESET" Click ="BtnReset_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="146" Grid.Column="1" Margin="22.6,11,0,0" Grid.Row="3" Height="37"/>
         <Label Content="Name" HorizontalAlignment="Left" Height="25" Margin="80,12.6,0,0" Grid.Row="2" VerticalAlignment="Top" Width="65"/>
-        <Label Content="UserID" HorizontalAlignment="Left" Height="25" Margin="81,59.6,0,0" Grid.Row="2" VerticalAlignment="Top" Width="65"/>
+        <Label Content="Username" HorizontalAlignment="Left" Height="25" Margin="81,59.6,0,0" Grid.Row="2" VerticalAlignment="Top" Width="65"/>
         <Label Content="Password" HorizontalAlignment="Left" Height="25" Margin="81,101.6,0,0" Grid.Row="2" VerticalAlignment="Top" Width="65"/>
         <Label Content="Code" HorizontalAlignment="Left" Height="25" Margin="446,60.6,0,0" Grid.Row="2" VerticalAlignment="Top" Width="49"/>
-        <Label Content="Status" HorizontalAlignment="Left" Height="25" Margin="47,5,0,0" Grid.Row="3" VerticalAlignment="Top" Width="84"/>
-        <Label Content="Active" HorizontalAlignment="Left" Height="25" Margin="165,5,0,0" Grid.Row="3" VerticalAlignment="Top" Width="84"/>
+        <Label Content="Status" HorizontalAlignment="Left" Margin="80,6,0,31" Grid.Row="3" Width="84"/>
+        <Label Content="Active" HorizontalAlignment="Left" Height="25" Margin="179,5,0,0" Grid.Row="3" VerticalAlignment="Top" Width="91"/>
 
 
     </Grid>

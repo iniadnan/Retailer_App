@@ -31,30 +31,72 @@ namespace Retailer_App.Views.Home
 
         private readonly UserViewModel vm;
 
-        private void BtnMenu_Click(object sender, RoutedEventArgs e) {
+        private void ResetComponent()
+        {
+            TxtUid.IsReadOnly = true;
+
+            BtnNew.Visibility = Visibility.Visible;
+            BtnEdit.Visibility = Visibility.Hidden;
+            BtnUpdate.Visibility = Visibility.Hidden;
+            BtnDelete.Visibility = Visibility.Hidden;
+            BtnMenu.Visibility = Visibility.Hidden;
+            BtnReset.Visibility = Visibility.Hidden;
+            TxtUid.Visibility = Visibility.Hidden;
+
+            TxtName.IsEnabled = false;
+            TxtUser.IsEnabled = false;
+            TxtPassword.IsEnabled = false;
+            ChkStatus.IsEnabled = false;
+
+            vm.Model = new User();
+            BtnNew.Focus();
         }
 
-
-
-
+        private void BtnMenu_Click(object sender, RoutedEventArgs e) {
+            ResetComponent();
+        }
 
         private void TblData_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
+            BtnNew.Visibility = Visibility.Hidden;
+            BtnEdit.Visibility = Visibility.Visible;
+            BtnMenu.Visibility = Visibility.Visible;
+            BtnReset.Visibility = Visibility.Hidden;
         }
 
 
         private void BtnReset_Click(object sender, RoutedEventArgs e)
         {
+            ResetComponent();
         }
         private void BtnNew_Click(object sender, RoutedEventArgs e)
         {
+            BtnNew.Visibility = Visibility.Hidden;
+            BtnReset.Visibility = Visibility.Visible;
+            BtnInsert.Visibility = Visibility.Visible;
+            TxtName.IsEnabled = true;
+            TxtUser.IsEnabled = true;
+            TxtPassword.IsEnabled = true;
+            ChkStatus.IsEnabled = true;
+            vm.Model = new User();
+            vm.IsChecked = true;
+            TxtName.Focus();
         }
 
         private void BtnEdit_Click(object sender, RoutedEventArgs e)
         {
-
-
-
+            BtnEdit.Visibility = Visibility.Hidden;
+            BtnInsert.Visibility = Visibility.Hidden;
+            BtnReset.Visibility = Visibility.Hidden;
+            BtnUpdate.Visibility = Visibility.Visible;
+            BtnDelete.Visibility = Visibility.Visible;
+            BtnMenu.Visibility = Visibility.Visible;
+            TxtName.IsEnabled = true;
+            TxtUser.IsEnabled = true;
+            TxtPassword.IsEnabled = true;
+            ChkStatus.IsEnabled = true;
+            TxtUid.Visibility = Visibility.Visible;
+            TxtName.Focus();
         }
 
         private void BtnClose_Click(object sender, RoutedEventArgs e)
