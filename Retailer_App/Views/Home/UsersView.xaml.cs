@@ -39,7 +39,6 @@ namespace Retailer_App.Views.Home
             BtnEdit.Visibility = Visibility.Hidden;
             BtnUpdate.Visibility = Visibility.Hidden;
             BtnDelete.Visibility = Visibility.Hidden;
-            BtnMenu.Visibility = Visibility.Hidden;
             BtnReset.Visibility = Visibility.Hidden;
             TxtUid.Visibility = Visibility.Hidden;
 
@@ -52,15 +51,10 @@ namespace Retailer_App.Views.Home
             BtnNew.Focus();
         }
 
-        private void BtnMenu_Click(object sender, RoutedEventArgs e) {
-            ResetComponent();
-        }
-
         private void TblData_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
             BtnNew.Visibility = Visibility.Hidden;
             BtnEdit.Visibility = Visibility.Visible;
-            BtnMenu.Visibility = Visibility.Visible;
             BtnReset.Visibility = Visibility.Hidden;
         }
 
@@ -90,7 +84,6 @@ namespace Retailer_App.Views.Home
             BtnReset.Visibility = Visibility.Hidden;
             BtnUpdate.Visibility = Visibility.Visible;
             BtnDelete.Visibility = Visibility.Visible;
-            BtnMenu.Visibility = Visibility.Visible;
             TxtName.IsEnabled = true;
             TxtUser.IsEnabled = true;
             TxtPassword.IsEnabled = true;

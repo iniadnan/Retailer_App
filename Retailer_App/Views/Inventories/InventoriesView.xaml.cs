@@ -24,5 +24,13 @@ namespace Retailer_App.Views.Inventories
         {
             InitializeComponent();
         }
+
+        private void TblData_SelectedCellsChanged(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void BtnMenu_Click(object sender, RoutedEventArgs e)
+        {
+        }
     }
 }

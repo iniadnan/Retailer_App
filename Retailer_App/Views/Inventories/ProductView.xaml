@@ -7,6 +7,30 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-            
+        <Grid.RowDefinitions>
+            <RowDefinition Height="14*"/>
+            <RowDefinition Height="48*"/>
+            <RowDefinition Height="26*"/>
+            <RowDefinition Height="17*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="46*"/>
+            <ColumnDefinition Width="15*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="DATA PRODUCT" FontSize="22" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="40" Width="165"/>
+        <DataGrid x:Name="DataGrid" HorizontalAlignment="Left" Height="172" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="578"/>
+        <Label Content="Product" FontSize="15" HorizontalAlignment="Left" Margin="80,10,0,0" Grid.Row="2" VerticalAlignment="Top"/>
+        <Label Content="Name" FontSize="15" HorizontalAlignment="Left" Margin="92,52,0,0" Grid.Row="2" VerticalAlignment="Top"/>
+        <Label Content="Active" FontSize="15" HorizontalAlignment="Left" Margin="195,52,0,0" Grid.Row="2" VerticalAlignment="Top"/>
+        <Label Content="Code" FontSize="15" HorizontalAlignment="Left" Margin="418,52,0,0" Grid.Row="2" VerticalAlignment="Top"/>
+        <TextBox x:Name="TxtProduct" HorizontalAlignment="Left" Height="31" Margin="175,12,0,0" Grid.Row="2" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="413"/>
+        <TextBox x:Name="TxtCode" HorizontalAlignment="Left" Height="30" Margin="480,52,0,0" Grid.Row="2" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="108"/>
+        <CheckBox x:Name="CheckBox" Content=""   HorizontalAlignment="Left" Margin="180,62,0,0" Grid.Row="2" VerticalAlignment="Top" RenderTransformOrigin="0.783,-0.022"/>
+        <Button x:Name="BtnEdit" Content="EDIT" Grid.Column="1" HorizontalAlignment="Left" Height="56" Margin="9.6,12,0,0" Grid.Row="1" VerticalAlignment="Top" Width="176"/>
+        <Button x:Name="BtnUpdate" Content="UPDATE" Grid.Column="1" HorizontalAlignment="Left" Height="56" Margin="9.6,77,0,0" Grid.Row="1" VerticalAlignment="Top" Width="176"/>
+        <Button x:Name="BtnDelete" Content="DELETE" Grid.Column="1" HorizontalAlignment="Left" Height="56" Margin="9.6,144,0,0" Grid.Row="1" VerticalAlignment="Top" Width="176" Grid.RowSpan="2"/>
+        <Button x:Name="BtnReset" Content="RESET" Grid.Column="1" HorizontalAlignment="Left" Height="56" Margin="9.6,19,0,0" Grid.Row="2" VerticalAlignment="Top" Width="176"/>
+        <Button x:Name="BtnClose" Content="CLOSE" Grid.Column="1" HorizontalAlignment="Left" Height="56" Margin="9.6,90,0,0" Grid.Row="2" VerticalAlignment="Top" Width="176" Grid.RowSpan="2"/>
+
     </Grid>
 </UserControl>

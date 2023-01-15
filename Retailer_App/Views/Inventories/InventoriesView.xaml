@@ -7,6 +7,52 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-            
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="32*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="34*"/>
+            <ColumnDefinition Width="263*"/>
+            <ColumnDefinition Width="100*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.ColumnSpan="3" Margin="0,0,-2.4,-2" Grid.RowSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="133*"/>
+                <ColumnDefinition Width="663*"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="DATA INVENTORIES" FontSize="20" FontStyle="Normal" HorizontalAlignment="Left" Height="34" Margin="38,10,0,0" VerticalAlignment="Top" Width="199" Grid.ColumnSpan="2"/>
+
+
+            <Label Content="Show Date" HorizontalAlignment="Left" Height="34" Margin="63.533,46,0,0" VerticalAlignment="Top" Width="133" Grid.Column="1"/>
+            <Label Content="" HorizontalAlignment="Left" Height="34" Margin="301.533,26,0,0" VerticalAlignment="Top" Width="133" Grid.Column="1"/>
+
+            <Button x:Name="BtnShow" Content="SHOW" FontSize="15" FontStyle="Italic" HorizontalAlignment="Left" Height="55" Margin="478.533,45,0,0" VerticalAlignment="Top" Width="162" Grid.Column="1" Command="{Binding ShowCommand}"     />
+            <Button x:Name="BtnNew" Content="NEW" FontSize="15" FontStyle="Italic" HorizontalAlignment="Left" Height="55" Margin="478.533,123,0,0" VerticalAlignment="Top" Width="162" Grid.Column="1" Command="{Binding NewCommand}"       />
+            <Button x:Name="BtnEdit" Content="EDIT" FontSize="15" FontStyle="Italic" HorizontalAlignment="Left" Height="55" Margin="478.533,200,0,0" VerticalAlignment="Top" Width="162" Grid.Column="1" Command="{Binding EditCommand}"    />
+            <Button x:Name="BtnReset" Content="RESET" FontSize="15" FontStyle="Italic" HorizontalAlignment="Left" Height="55" Margin="478.533,276,0,0" VerticalAlignment="Top" Width="162" Grid.Column="1" Command="{Binding ResetCommand}" />
+            <Button x:Name="BtnClose" Content="CLOSE" FontSize="15" FontStyle="Italic" HorizontalAlignment="Left" Height="55" Margin="478.533,350,0,0" VerticalAlignment="Top" Width="162" Grid.Column="1" Command="{Binding CloseCommand}" />
+            <ComboBox x:Name="Typecombo" HorizontalAlignment="Left" VerticalAlignment="Top" Width="76" Margin="80,48,0,0" Grid.ColumnSpan="2"/>
+            <Label Content="Type" HorizontalAlignment="Left" Height="34" Margin="25,44,0,0" VerticalAlignment="Top" Width="85"/>
+            <Label Content="/" HorizontalAlignment="Left" Height="34" Margin="287.533,46,0,0" VerticalAlignment="Top" Width="133" Grid.Column="1"/>
+            <DataGrid x:Name="TblData" Grid.Column="0" Grid.Row="1" HeadersVisibility="Column" EnableRowVirtualization="False"
+                      CanUserAddRows="False" CanUserDeleteRows="False"
+                       AutoGenerateColumns="False" AlternatingRowBackground="LightGray"
+                      HorizontalAlignment="Left" Height="330" Margin="10,75,0,0" VerticalAlignment="Top" Width="597" Grid.ColumnSpan="2">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="CODE" Binding="{Binding Uid}" Width="auto"/>
+                    <DataGridTextColumn Header="NAME" Binding="{Binding Name}" Width="*"/>
+                    <DataGridTextColumn Header="USER" Binding="{Binding UserName}" Width="*"/>
+                    <DataGridTextColumn Header="TYPE" Binding="{Binding Type}" Width="*"/>
+                    <DataGridTextColumn Header="STATUS" Binding="{Binding Status}" Width="auto"/>
+                </DataGrid.Columns>
+
+
+            </DataGrid>
+
+
+        </Grid>
+        <DatePicker x:Name="SelectDate2" Grid.Column="1" HorizontalAlignment="Left" Margin="386,11,0,0" Grid.Row="1" VerticalAlignment="Top" Width="130"/>
+        <DatePicker x:Name="SelectDate1" Grid.Column="1" HorizontalAlignment="Left" Margin="202,11,0,0" Grid.Row="1" VerticalAlignment="Top" Width="130"/>
     </Grid>
 </UserControl>

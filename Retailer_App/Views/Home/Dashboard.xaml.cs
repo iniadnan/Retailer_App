@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Retailer_App.Views.Inventories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,10 +24,17 @@ namespace Retailer_App.Views.Home
         {
             InitializeComponent();
         }
+
         private void MnuUsers_Click(object sender, RoutedEventArgs e)
         {
             PnlContent.Children.Clear();
             PnlContent.Children.Add(new UsersView());
+        }
+
+        private void MnuUsersRules_Click(object sender, RoutedEventArgs e)
+        {
+            PnlContent.Children.Clear();
+            PnlContent.Children.Add(new RulesDialog());
         }
 
         private void MnuRelogin_Click(object sender, RoutedEventArgs e)
@@ -41,6 +49,8 @@ namespace Retailer_App.Views.Home
 
         private void MnuUser_Click(object sender, RoutedEventArgs e)
         {
+            PnlContent.Children.Clear();
+            PnlContent.Children.Add(new RulesDialog());
         }
 
         private void MnuExit_Click(object sender, RoutedEventArgs e)
@@ -49,13 +59,19 @@ namespace Retailer_App.Views.Home
         }
         private void MnuInventory_Click(object sender, RoutedEventArgs e)
         {
+            PnlContent.Children.Clear();
+            PnlContent.Children.Add(new InventoriesView());
         }
 
         private void MnuStock_Click(object sender, RoutedEventArgs e)
         {
+            PnlContent.Children.Clear();
+            PnlContent.Children.Add(new StockDialog());
         }
         private void MnuProduct_Click(object sender, RoutedEventArgs e)
         {
+            PnlContent.Children.Clear();
+            PnlContent.Children.Add(new ProductView());
         }
     }
 }

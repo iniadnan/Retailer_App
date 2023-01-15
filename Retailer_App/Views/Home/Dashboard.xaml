@@ -23,6 +23,8 @@
                 </MenuItem>
                 <MenuItem Header="User" x:Name="MnuUser" Click="MnuUsers_Click"/>
                 <Separator/>
+                <MenuItem Header="User Rules" x:Name="MnuUserRules" Click="MnuUsersRules_Click"/>
+                <Separator/>
                 <MenuItem Header="Exit" x:Name="MnuExit" Click="MnuExit_Click"/>
             </MenuItem>
             <MenuItem Header="_Inventories">

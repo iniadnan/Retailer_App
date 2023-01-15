@@ -10,6 +10,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Retailer_App.Views.Home
@@ -17,7 +18,7 @@ namespace Retailer_App.Views.Home
     /// <summary>
     /// Interaction logic for RulesDialog.xaml
     /// </summary>
-    public partial class RulesDialog : Window
+    public partial class RulesDialog : UserControl
     {
         public RulesDialog()
         {
