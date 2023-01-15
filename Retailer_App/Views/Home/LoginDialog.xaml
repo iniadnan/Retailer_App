@@ -1,0 +1,17 @@
+﻿<Window x:Class="Retailer_App.Views.Home.LoginDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Retailer_App.Views.Home"
+        mc:Ignorable="d"
+        Title="LoginDialog" Height="450" Width="800">
+    <Grid Margin="0,0,-0.4,0">
+        <Button x:Name="BtnLogin" Click="Login_Click" Content="Login" HorizontalAlignment="Left" Margin="171,298,0,0" VerticalAlignment="Top" Width="178" Height="64"/>
+        <Button x:Name="BtnClose" Click="Close_Click" Content="Close" HorizontalAlignment="Left" Margin="485,298,0,0" VerticalAlignment="Top" Width="178" Height="64"/>
+        <TextBox  x:Name ="TxtUser"  Height="43" Margin="293,54,173,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="328"/>
+        <PasswordBox x:Name="TxtPass" Margin="293,129,173,247"/>
+        <Label Content="User ID" HorizontalAlignment="Left" Margin="143,59,0,0" VerticalAlignment="Top" Width="125" Height="38"/>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="143,129,0,0" VerticalAlignment="Top" Width="125" Height="38"/>
+    </Grid>
+</Window>
