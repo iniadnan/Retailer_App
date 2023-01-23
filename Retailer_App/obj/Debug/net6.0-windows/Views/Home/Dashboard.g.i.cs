@@ -124,7 +124,7 @@ namespace Retailer_App.Views.Home {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Retailer_App;V1.0.0.0;component/views/home/dashboard.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Retailer_App;component/views/home/dashboard.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Views\Home\Dashboard.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

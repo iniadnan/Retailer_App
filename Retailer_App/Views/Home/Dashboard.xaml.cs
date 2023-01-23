@@ -1,4 +1,5 @@
-﻿using Retailer_App.Views.Inventories;
+﻿using Retailer_App.ViewModels;
+using Retailer_App.Views.Inventories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +24,11 @@ namespace Retailer_App.Views.Home
         public Dashboard()
         {
             InitializeComponent();
+            vm = new UserViewModel();
+            DataContext = vm;
         }
+
+        private readonly UserViewModel vm;
 
         private void MnuUsers_Click(object sender, RoutedEventArgs e)
         {
@@ -45,6 +50,8 @@ namespace Retailer_App.Views.Home
 
         private void MnuBackup_Click(object sender, RoutedEventArgs e)
         {
+            UserViewModel class1 = new UserViewModel();
+            class1.BackUpDataAsync();
         }
 
         private void MnuUser_Click(object sender, RoutedEventArgs e)

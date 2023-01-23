@@ -26,6 +26,7 @@ namespace Retailer_App.ViewModels
             DeleteCommand = new RelayCommand(async () => await DeleteDataAsync());
             SelectCommand = new RelayCommand(async () => await ReadDataAsync());
             LoginCommand = new RelayCommand(async () => await LoginDataAsync());
+            BackUpCommand = new RelayCommand(async () => await BackUpDataAsync());
             SelectCommand.Execute(null);
         }
 
@@ -34,6 +35,7 @@ namespace Retailer_App.ViewModels
         public RelayCommand DeleteCommand { get; set; }
         public RelayCommand SelectCommand { get; set; }
         public RelayCommand LoginCommand { get; set; }
+        public RelayCommand BackUpCommand { get; set; }
 
         public ObservableCollection<User> Collection
         {
@@ -200,6 +202,23 @@ namespace Retailer_App.ViewModels
             dbconn.CloseConnection();
         }
 
+        public async Task BackUpDataAsync()
+        {
+            var msg = MessageBox.Show("Apakah Kamu Ingin Backup Database?", "Question",
+                    MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (msg == MessageBoxResult.Yes)
+            {
+                dbconn.OpenConnection();
+                await Task.Delay(0);
+                var query2 = "BACKUP DATABASE Retailer_DB TO DISK = 'C:\\temp\\Retailer_DB.bak'";
+                var sqlcmd2 = new SqlCommand(query2, dbconn.SqlConnect);
+                sqlcmd2.ExecuteNonQuery();
+                dbconn.CloseConnection();
+                OnCallBack?.Invoke();
+            }
+            var msg = MessageBox.Show("Backup Database Selesai!", "Question",
+                    MessageBoxButton.YesNo, MessageBoxImage.Question);
+        }
         private bool IsValidating()
         {
             var flag = true;
