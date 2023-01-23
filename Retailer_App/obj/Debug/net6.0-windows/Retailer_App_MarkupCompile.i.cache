@@ -12,9 +12,9 @@ TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\malik\OneDrive\Desktop\Retailer_App\Retailer_App\App.xaml
 9738872996
 
-21-1293806565
+22-1202439641
 195727820040
 MainWindow.xaml;Views\Home\Dashboard.xaml;Views\Home\LoginDialog.xaml;Views\Home\RulesDialog.xaml;Views\Home\UsersView.xaml;Views\Inventories\EditorView.xaml;Views\Inventories\InventoriesView.xaml;Views\Inventories\ProductView.xaml;Views\Inventories\StockDialog.xaml;
 
-True
+False
 

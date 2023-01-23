@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Retailer_App.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,14 @@ namespace Retailer_App.Views.Inventories
         public ProductView()
         {
             InitializeComponent();
+            vm = new ProductViewModel();
+            DataContext = vm;
+        }
+
+        private readonly ProductViewModel vm;
+
+        private void TblData_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
+        {
         }
     }
 }

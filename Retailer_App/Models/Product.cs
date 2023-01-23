@@ -8,8 +8,8 @@ namespace Retailer_App.Models
 {
     public class Product
     {
-        public int Uid { get; set; }
+        public string Uid { get; set; }
         public string Name { get; set; }
-        public int Status { get; set; }
+        public string Status { get; set; }
     }
 }
